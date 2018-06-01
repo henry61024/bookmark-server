@@ -26,4 +26,4 @@ node_modules
 *.sln
 
 # client bundled codes
-# /public/
+/public/
