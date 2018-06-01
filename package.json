@@ -1,0 +1,21 @@
+{
+  "name": "bookmark-server",
+  "version": "1.0.0",
+  "description": "Bookmark server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "henry35208@hotmail.com.tw",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.0"
+  }
+}
