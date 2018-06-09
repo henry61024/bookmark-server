@@ -1,20 +1,20 @@
-const db = require('../services/index'),
-      usersDb = db.Users
+const service = require('../services/index'),
+      usersService = service.Users
 
 exports.readAll = (request, response) => {
-    usersDb.readAll()
+    usersService.readAll()
            .then(responseReadAll.bind(null, response))
            .catch(console.error)
 }
 
 exports.create = (request, response) => {
-    usersDb.create(request.body)
+    usersService.create(request.body)
            .then(responseCreate.bind(null, response))
            .catch(console.error)
 }
 
 exports.read = (request, response) => {
-    usersDb.read(request.params.username)
+    usersService.read(request.params.username)
            .then(responseRead.bind(null, response))
            .catch(console.error)
 }
@@ -24,13 +24,13 @@ exports.update = (request, response) => {
         username: request.params.username,
         description: request.body.description
     }
-    usersDb.update(userObj)
+    usersService.update(userObj)
            .then(responseUpdate.bind(null, response))
            .catch(console.error)
 }
 
 exports.delete = (request, response) => {
-    usersDb.delete({ username: request.params.username })
+    usersService.delete({ username: request.params.username })
            .then(responseDelete.bind(null, response))
            .catch(console.error)
 }
