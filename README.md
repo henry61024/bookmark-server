@@ -6,7 +6,7 @@
 
 ``` bash
 # ignore changes on client's code
-git update-index --skip-worktree ./public/*
+git update-index --skip-worktree ./public/.gitkeep
 
 # install dependencies
 npm install
