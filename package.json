@@ -11,7 +11,7 @@
     "nodejs",
     "express"
   ],
-  "author": "henry35208@hotmail.com.tw",
+  "author": "Program-book-club-for-fun",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
