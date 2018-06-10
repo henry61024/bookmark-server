@@ -3,15 +3,16 @@ const express = require('express'),
       authController = require('../../controllers/index').auth,
       passport = require('passport'),
       GoogleStrategy = require('passport-google-oauth20').Strategy,
+      config = require('../../config/index'),
       router = express.Router()
 
 // replace clientID & clientSecret
 passport.use(new GoogleStrategy({
-            clientID: undefined,
-            clientSecret: undefined,
-            callbackURL: 'http://localhost:3000/api/auth/google/callback'
+            clientID: config.auth.google.clientID,
+            clientSecret: config.auth.google.clientSecret,
+            callbackURL: `${config.url}/api/auth/google/callback`,
       }, function (accessToken, refreshToken, profile, cb) {
-            console.log('google login success!, profile:', profile)
+            console.log('google login success, profile:', profile)
             return cb(null, profile);
       }))
 

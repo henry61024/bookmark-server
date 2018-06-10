@@ -6,6 +6,7 @@ const express = require('express'),
       session = require('express-session'),
       router = require('./routers/index'),
       services = require('./services/index'),
+      config = require('./config/index'),
       app = express()
 
 mongoose.Promise = global.Promise
@@ -18,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // commons
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }))
+app.use(session(config.session))
 
 // passport
 passport.serializeUser(function(user, done) {
@@ -36,4 +37,4 @@ app.use(passport.session())
 // router
 app.use(router)
 
-app.listen(process.env.PORT || 3000)
+app.listen(config.port)
