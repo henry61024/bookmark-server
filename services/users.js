@@ -18,6 +18,10 @@ exports.delete = (obj) => {
     return User.findOneAndRemove(obj).exec()
 }
 
+exports.findById = (id) => {
+    return User.findById().exec()
+}
+
 exports.readAll = () => {
     return User.find().exec()
 }
