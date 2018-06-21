@@ -4,6 +4,8 @@ const mongoose = require('mongoose'),
           username: String,
           description: String,
           createTime: Date,
+          gender: String,
+          avatar: String,
           role: String,
       })
 
