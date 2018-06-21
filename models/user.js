@@ -2,7 +2,6 @@ const mongoose = require('mongoose'),
       userSchema = new mongoose.Schema({
           authId: String,
           name: String,
-          description: String,
           createTime: Date,
           gender: String,
           avatar: String,

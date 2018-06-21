@@ -21,8 +21,7 @@ exports.read = (request, response) => {
 
 exports.update = (request, response) => {
     const userObj = {
-        name: request.params.name,
-        description: request.body.description
+        name: request.params.name
     }
     usersService.update(userObj)
            .then(responseUpdate.bind(null, response))
@@ -41,15 +40,13 @@ function responseReadAll(response, users) {
 
 function responseCreate(response, user) {
     response.status(201).json({
-        name: user.name,
-        description: user.description
+        name: user.name
     })
 }
 
 function responseRead(response, user) {
     response.status(200).json({
-        name: user.name,
-        description: user.description
+        name: user.name
     })
 }
 
