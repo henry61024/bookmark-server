@@ -19,7 +19,11 @@ exports.delete = (obj) => {
 }
 
 exports.findById = (id) => {
-    return User.findById().exec()
+    return User.findById(id).exec()
+}
+
+exports.findByAuthId = (authId) => {
+    return User.findOne({ authId }).exec()
 }
 
 exports.readAll = () => {

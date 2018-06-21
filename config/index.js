@@ -12,6 +12,7 @@ let config = {
             enable: true,
             clientID: undefined,
             clientSecret: undefined,
+            idPrefix: 'google_',
         }
     },
 }

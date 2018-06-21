@@ -2,10 +2,9 @@ const express = require('express'),
       mongoose = require('mongoose'),
       path = require('path'),
       bodyParser = require('body-parser'),
-      passport = require('passport'),
       session = require('express-session'),
       router = require('./routers/index'),
-      services = require('./services/index'),
+      auth = require('./lib/auth/index'),
       config = require('./config/index'),
       app = express()
 
@@ -21,18 +20,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(session(config.session))
 
-// passport
-passport.serializeUser(function(user, done) {
-      console.log('serializeUser: ' + user.id)
-      done(null, user.id)
-})
-
-passport.deserializeUser(function(id, done) {
-      console.log('deserializeUser: ' + id)
-      done(null, id)
-})
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(auth.initialize())
+app.use(auth.session())
 
 // router
 app.use(router)

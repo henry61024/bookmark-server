@@ -1,6 +1,4 @@
-const db = require('../../services/index'),
-    passport = require('passport'),
-    usersDb = db.Users
+const auth = require('../../lib/auth/index')
 
 module.exports = {
     authenticate,
@@ -8,9 +6,9 @@ module.exports = {
 }
 
 function authenticate(request, response, next) {
-    passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'})(request, response, next)
+    auth.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'})(request, response, next)
 }
 
 function authenticateRedirect(request, response, next) {
-    passport.authenticate('google', { failureRedirect: '/' })(request, response, next);
+    auth.authenticate('google', { failureRedirect: '/' })(request, response, next)
 }
