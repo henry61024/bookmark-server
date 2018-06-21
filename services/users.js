@@ -6,12 +6,12 @@ exports.create = (obj) => {
     return user.save()
 }
 
-exports.read = (username) => {
-    return User.findOne({ username }).exec()
+exports.read = (name) => {
+    return User.findOne({ name }).exec()
 }
 
 exports.update = (obj) => {
-    return User.findOneAndUpdate({ username: obj.username }, obj).exec()
+    return User.findOneAndUpdate({ name: obj.name }, obj).exec()
 }
 
 exports.delete = (obj) => {

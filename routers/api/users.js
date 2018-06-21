@@ -7,10 +7,10 @@ router.get('/', controller.Users.readAll)
 
 router.post('/', controller.Users.create)
 
-router.get('/:username', controller.Users.read)
+router.get('/:name', controller.Users.read)
 
-router.put('/:username', controller.Users.update)
+router.put('/:name', controller.Users.update)
 
-router.delete('/:username', controller.Users.delete)
+router.delete('/:name', controller.Users.delete)
 
 module.exports = router

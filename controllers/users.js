@@ -14,14 +14,14 @@ exports.create = (request, response) => {
 }
 
 exports.read = (request, response) => {
-    usersService.read(request.params.username)
+    usersService.read(request.params.name)
            .then(responseRead.bind(null, response))
            .catch(console.error)
 }
 
 exports.update = (request, response) => {
     const userObj = {
-        username: request.params.username,
+        name: request.params.name,
         description: request.body.description
     }
     usersService.update(userObj)
@@ -30,7 +30,7 @@ exports.update = (request, response) => {
 }
 
 exports.delete = (request, response) => {
-    usersService.delete({ username: request.params.username })
+    usersService.delete({ name: request.params.name })
            .then(responseDelete.bind(null, response))
            .catch(console.error)
 }
@@ -41,14 +41,14 @@ function responseReadAll(response, users) {
 
 function responseCreate(response, user) {
     response.status(201).json({
-        username: user.username,
+        name: user.name,
         description: user.description
     })
 }
 
 function responseRead(response, user) {
     response.status(200).json({
-        username: user.username,
+        name: user.name,
         description: user.description
     })
 }
