@@ -40,13 +40,23 @@ function responseReadAll(response, users) {
 
 function responseCreate(response, user) {
     response.status(201).json({
-        name: user.name
+        authId: user.authId,
+        name: user.name,
+        createTime: user.date,
+        gender: user.gender,
+        avatar: user.avatar,
+        role: user.role,
     })
 }
 
 function responseRead(response, user) {
     response.status(200).json({
-        name: user.name
+        authId: user.authId,
+        name: user.name,
+        createTime: user.date,
+        gender: user.gender,
+        avatar: user.avatar,
+        role: user.role,
     })
 }
 
