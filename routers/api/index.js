@@ -1,6 +1,6 @@
 const express = require('express'),
       users = require('./users'),
-      auth = require('./auth'),
+      auth = require('./auth/index'),
       router = express.Router()
 
 router.use('/users', users)
