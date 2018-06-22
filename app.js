@@ -9,7 +9,7 @@ const express = require('express'),
       app = express()
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/poc')
+mongoose.connect(config.db.url)
 mongoose.connection.on('error', console.error)
 
 // static files

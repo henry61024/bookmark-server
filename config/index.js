@@ -2,6 +2,9 @@ let config = {
     domain: 'localhost',
     port: '3000',
     protocol: 'http',
+    db: {
+        url: undefined,
+    },
     session: {
         secret: undefined,
         resave: true,
@@ -12,13 +15,13 @@ let config = {
             enable: true,
             clientID: undefined,
             clientSecret: undefined,
-            idPrefix: 'google_',
+            authIdPrefix: 'google_',
         },
         facebook: {
             enable: true,
             clientID: undefined,
             clientSecret: undefined,
-            idPrefix: 'facebook_',
+            authIdPrefix: 'facebook_',
         },
     },
 }
