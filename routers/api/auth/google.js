@@ -4,7 +4,7 @@ const express = require('express'),
       router = express.Router()
 
 // rename
-auth.initGoogle();
+auth.initGoogle()
 
 router.get('/', authController.google.authenticate)
 

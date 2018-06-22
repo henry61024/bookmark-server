@@ -1,11 +1,7 @@
 const google = require('./google'),
-      usersDb = require('../../services/users')
+      facebook = require('./facebook')
 
 module.exports = {
     google,
-    findUserById
-}
-
-function findUserById(id) {
-    return usersDb.findById(id)
+    facebook
 }

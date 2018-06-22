@@ -13,7 +13,13 @@ let config = {
             clientID: undefined,
             clientSecret: undefined,
             idPrefix: 'google_',
-        }
+        },
+        facebook: {
+            enable: true,
+            clientID: undefined,
+            clientSecret: undefined,
+            idPrefix: 'facebook_',
+        },
     },
 }
 
