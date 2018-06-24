@@ -15,13 +15,11 @@ let config = {
             enable: true,
             clientID: undefined,
             clientSecret: undefined,
-            authIdPrefix: 'google_',
         },
         facebook: {
             enable: true,
             clientID: undefined,
             clientSecret: undefined,
-            authIdPrefix: 'facebook_',
         },
     },
 }
