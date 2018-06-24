@@ -5,10 +5,10 @@ module.exports = {
     authenticateRedirect
 }
 
-function authenticate(request, response, next) {
-    auth.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'})(request, response, next)
+function authenticate(req, res, next) {
+    auth.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'})(req, res, next)
 }
 
-function authenticateRedirect(request, response, next) {
-    auth.authenticate('google', { failureRedirect: '/' })(request, response, next)
+function authenticateRedirect(req, res, next) {
+    auth.authenticate('google', { failureRedirect: '/' })(req, res, next)
 }

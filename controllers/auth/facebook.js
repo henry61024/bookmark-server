@@ -5,10 +5,10 @@ module.exports = {
     authenticateRedirect
 }
 
-function authenticate(request, response, next) {
-    auth.authenticate('facebook', {})(request, response, next)
+function authenticate(req, res, next) {
+    auth.authenticate('facebook', {})(req, res, next)
 }
 
-function authenticateRedirect(request, response, next) {
-    auth.authenticate('facebook', { failureRedirect: '/' })(request, response, next)
+function authenticateRedirect(req, res, next) {
+    auth.authenticate('facebook', { failureRedirect: '/' })(req, res, next)
 }
