@@ -1,7 +1,7 @@
 const router = require('express').Router(),
       googleRouter = require('./google'),
       facebookRouter = require('./facebook')
-      config = require('../../../config/index')
+      config = require('../../../configs/index')
 
 if (config.auth.google.enable) {
     router.use('/google', googleRouter)

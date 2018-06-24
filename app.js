@@ -5,7 +5,7 @@ const express = require('express'),
       session = require('express-session'),
       router = require('./routers/index'),
       auth = require('./lib/auth/index'),
-      config = require('./config/index'),
+      config = require('./configs/index'),
       app = express()
 
 mongoose.Promise = global.Promise
