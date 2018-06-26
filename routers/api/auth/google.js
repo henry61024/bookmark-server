@@ -3,7 +3,6 @@ const express = require('express'),
       auth = require('../../../lib/auth/index'),
       router = express.Router()
 
-// rename
 auth.initGoogle()
 
 router.get('/', authController.google.authenticate)

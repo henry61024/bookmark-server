@@ -42,9 +42,10 @@ function responseCreate(res, user) {
     res.status(201).json({
         authId: user.authId,
         name: user.name,
-        createTime: user.date,
-        gender: user.gender,
         avatar: user.avatar,
+        gender: user.gender,
+        provider: user.provider,
+        createTime: user.date,
         role: user.role,
     })
 }
@@ -53,9 +54,10 @@ function responseRead(res, user) {
     res.status(200).json({
         authId: user.authId,
         name: user.name,
-        createTime: user.date,
-        gender: user.gender,
         avatar: user.avatar,
+        gender: user.gender,
+        provider: user.provider,
+        createTime: user.date,
         role: user.role,
     })
 }
