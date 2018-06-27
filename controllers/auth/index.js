@@ -3,5 +3,10 @@ const google = require('./google'),
 
 module.exports = {
     google,
-    facebook
+    facebook,
+    authenticateSuccess,
+}
+
+function authenticateSuccess(req, res){
+    res.redirect('/#');
 }

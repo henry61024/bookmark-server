@@ -7,8 +7,6 @@ auth.initGoogle()
 
 router.get('/', authController.google.authenticate)
 
-router.get('/callback', authController.google.authenticateRedirect, function(req, res){
-      res.redirect('/#');
-})
+router.get('/callback', authController.google.authenticateCallback, authController.authenticateSuccess)
 
 module.exports = router

@@ -6,8 +6,6 @@ auth.initFacebook()
 
 router.get('/', authController.facebook.authenticate)
 
-router.get('/callback', authController.facebook.authenticateRedirect, function(req, res) {
-    res.redirect('/#')
-})
+router.get('/callback', authController.facebook.authenticateCallback, authController.authenticateSuccess)
 
 module.exports = router
