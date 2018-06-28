@@ -1,5 +1,5 @@
 const router = require('express').Router(),
-      auth = require('../../../lib/auth/index')
+      auth = require('../../../lib/auth/index'),
       authController = require('../../../controllers/index').auth
 
 auth.initFacebook()
