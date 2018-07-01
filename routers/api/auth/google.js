@@ -1,9 +1,7 @@
-const express = require('express'),
-      authController = require('../../../controllers/index').auth,
-      auth = require('../../../lib/auth/index'),
-      router = express.Router()
+const router = require('express').Router(),
+      authController = require('../../../controllers/index').auth
 
-auth.initGoogle()
+authController.google.init()
 
 router.get('/', authController.google.authenticate)
 

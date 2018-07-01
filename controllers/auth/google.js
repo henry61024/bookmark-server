@@ -1,8 +1,13 @@
 const auth = require('../../lib/auth/index')
 
 module.exports = {
+    init,
     authenticate,
-    authenticateCallback
+    authenticateCallback,
+}
+
+function init() {
+    auth.initGoogle()
 }
 
 function authenticate(req, res, next) {
