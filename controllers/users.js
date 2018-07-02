@@ -19,6 +19,10 @@ exports.read = (req, res) => {
            .catch(console.error)
 }
 
+exports.readSelfProfile = (req, res) => {
+    responseReadSelfProfile(res, req.user)
+}
+
 exports.update = (req, res) => {
     const userObj = {
         name: req.params.name
@@ -39,27 +43,19 @@ function responseReadAll(res, users) {
 }
 
 function responseCreate(res, user) {
-    res.status(201).json({
-        authId: user.authId,
-        name: user.name,
-        avatar: user.avatar,
-        gender: user.gender,
-        provider: user.provider,
-        createTime: user.date,
-        role: user.role,
-    })
+    res.status(201).json(getResponseUser(user))
 }
 
 function responseRead(res, user) {
-    res.status(200).json({
-        authId: user.authId,
-        name: user.name,
-        avatar: user.avatar,
-        gender: user.gender,
-        provider: user.provider,
-        createTime: user.date,
-        role: user.role,
-    })
+    res.status(200).json(getResponseUser(user))
+}
+
+function responseReadSelfProfile(res, user) {
+    if (user) {
+        res.status(200).json(getResponseUser(user))
+    } else {
+        res.status(401).json({ message: 'not login yet' })
+    }
 }
 
 function responseUpdate(res, user) {
@@ -68,4 +64,16 @@ function responseUpdate(res, user) {
 
 function responseDelete(res, user) {
     res.status(204).json()
+}
+
+function getResponseUser(user) {
+    return {
+        authId: user.authId,
+        name: user.name,
+        avatar: user.avatar,
+        gender: user.gender,
+        provider: user.provider,
+        createTime: user.createTime,
+        role: user.role,
+    }
 }
