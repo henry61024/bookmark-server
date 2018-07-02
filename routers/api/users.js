@@ -1,5 +1,4 @@
 const express = require('express'),
-      bodyParser = require('body-parser'),
       controller = require('../../controllers/index'),
       router = express.Router()
 
