@@ -3,6 +3,7 @@ const express = require('express'),
       path = require('path'),
       bodyParser = require('body-parser'),
       session = require('express-session'),
+      MongoStore = require('connect-mongo')(session),
       router = require('./routers/index'),
       auth = require('./lib/auth/index'),
       config = require('./configs/index'),
@@ -25,6 +26,7 @@ app.use(session({
       saveUninitialized: false,
       rolling: true,
       cookie: { maxAge: config.session.maxAge },
+      store: new MongoStore({ mongooseConnection: mongoose.connection }),
 }))
 
 app.use(auth.initialize())
