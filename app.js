@@ -18,7 +18,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 // commons
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(session(config.session))
+
+app.use(session({
+      secret: config.session.secret,
+      resave: false,
+      saveUninitialized: false,
+      rolling: true,
+      cookie: { maxAge: config.session.maxAge },
+}))
 
 app.use(auth.initialize())
 app.use(auth.session())

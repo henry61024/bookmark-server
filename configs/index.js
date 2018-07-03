@@ -7,8 +7,7 @@ let config = {
     },
     session: {
         secret: undefined,
-        resave: true,
-        saveUninitialized: true,
+        maxAge: 365 * 24 * 3600 * 1000,
     },
     auth: {
         google: {
