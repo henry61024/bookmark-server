@@ -2,7 +2,7 @@ const express = require('express'),
       users = require('./users'),
       auth = require('./auth/index'),
       authController = require('../../controllers/index').auth,
-      userController = require('../../controllers/index').Users,
+      userController = require('../../controllers/index').users,
       router = express.Router()
 
 router.use('/users', users)

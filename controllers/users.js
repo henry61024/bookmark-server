@@ -1,20 +1,20 @@
 const service = require('../services/index'),
-      usersService = service.Users
+      userService = service.users
 
 exports.readAll = (req, res) => {
-    usersService.readAll()
+    userService.readAll()
            .then(responseReadAll.bind(null, res))
            .catch(console.error)
 }
 
 exports.create = (req, res) => {
-    usersService.create(req.body)
+    userService.create(req.body)
            .then(responseCreate.bind(null, res))
            .catch(console.error)
 }
 
 exports.read = (req, res) => {
-    usersService.read(req.params.name)
+    userService.read(req.params.name)
            .then(responseRead.bind(null, res))
            .catch(console.error)
 }
@@ -27,13 +27,13 @@ exports.update = (req, res) => {
     const userObj = {
         name: req.params.name
     }
-    usersService.update(userObj)
+    userService.update(userObj)
            .then(responseUpdate.bind(null, res))
            .catch(console.error)
 }
 
 exports.delete = (req, res) => {
-    usersService.delete({ name: req.params.name })
+    userService.delete({ name: req.params.name })
            .then(responseDelete.bind(null, res))
            .catch(console.error)
 }
