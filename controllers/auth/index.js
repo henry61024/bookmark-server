@@ -9,13 +9,13 @@ module.exports = {
 }
 
 function authenticateSuccess(req, res){
-    res.redirect('/#');
+    res.redirect('/');
 }
 
 function logout(req, res) {
     console.log('logout: ', req.user)
     req.logout()
     req.session.destroy(function (err) {
-        res.redirect('/#')
+        res.redirect('/')
     })
 }
