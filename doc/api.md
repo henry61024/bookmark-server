@@ -14,13 +14,16 @@ Bookmark is a web service that enables user to share and manage bookmarks.
 
 ### Auth and login [GET]
 
-Auth and login with third-party account, include:
+Auth and login with third-party account.
 
-- `google`
-- `facebook`
+This API will first redirect browser to the corresponding third-party auth page. After user authorized, it then redirect to corresponding callback url for `sign up` / `login`. After all `sign up` / `login` steps done, it redirects back to `/`.
 
 + Parameters
-    + provider (required, string, `google`) ... Third-party account you want to auth and login with.
+
+    + provider (required, string) ... Third-party web service you want to auth and login with.
+        + Members
+            + `google`
+            + `facebook`
 
 + Response 302
 
@@ -34,6 +37,12 @@ Auth and login with third-party account, include:
 
 Logout from server, this will clear your session in server.
 
++ Request
+
+    + Headers
+
+            set-cookie: connect.sid=s%3A6lfsd;kfsd...; Path=/; Expires=Sat, 13 Jul 2019 15:49:51 GMT; HttpOnly
+
 + Response 302
 
     + Headers
@@ -45,6 +54,12 @@ Logout from server, this will clear your session in server.
 ### Get Self Profile [GET]
 
 Get current session's user profile.
+
++ Request
+
+    + Headers
+
+            set-cookie: connect.sid=s%3A6lfsd;kfsd...; Path=/; Expires=Sat, 13 Jul 2019 15:49:51 GMT; HttpOnly
 
 + Response 200 (application/json)
 
