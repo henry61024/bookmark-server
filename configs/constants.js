@@ -1,4 +1,4 @@
-let constants = {
+let constant = {
     role: {
         visitor: 'visitor',
         member: 'member',
@@ -6,4 +6,4 @@ let constants = {
     },
 }
 
-module.exports = constants
+module.exports = constant
